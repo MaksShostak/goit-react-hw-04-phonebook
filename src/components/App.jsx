@@ -47,24 +47,20 @@ export const App = () => {
       number,
     };
 
-    setContacts(prevContacts => [contact, ...prevContacts]);
+    setContacts([...contacts, contact]);
   };
 
   const changeFilter = event => {
     const { value } = event.currentTarget;
-    console.log(value);
     setFilter(value);
   };
 
   const handleDeleteContact = idContact => {
     let filtered = null;
     setContacts(
-      prevContacts =>
-        (filtered = prevContacts.filter(contact => contact.id !== idContact))
+      (filtered = contacts.filter(contact => contact.id !== idContact))
     );
-    setFilter(prevFilter =>
-      getFilteredContact(filtered).length ? prevFilter : ''
-    );
+    setFilter(getFilteredContact(filtered).length ? filter : '');
   };
 
   const getFilteredContact = filtered => {
