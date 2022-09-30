@@ -73,4 +73,5 @@ export const FormForPhoneBook = ({ onSubmit, data }) => {
 
 FormForPhoneBook.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  data: PropTypes.array.isRequired,
 };
